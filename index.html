@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tetris JS</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main class="app">
+    <div class="layout">
+      <aside class="panel">
+        <section class="panel-section">
+          <h2 class="panel-title">Score</h2>
+          <div class="stat big" id="score">0</div>
+        </section>
+        <section class="panel-section stats">
+          <div class="row"><span>Lines</span><span id="lines">0</span></div>
+          <div class="row"><span>Level</span><span id="level">1</span></div>
+        </section>
+        <section class="panel-section">
+          <h2 class="panel-title">Speed</h2>
+          <div class="speed">
+            <div id="speedFill" class="speed-fill"></div>
+          </div>
+        </section>
+        <section class="panel-section">
+          <h2 class="panel-title">Controls</h2>
+          <div class="controls-grid">
+            <div class="keys"><span class="keycap">←</span><span class="keycap">A</span> / <span class="keycap">→</span><span class="keycap">D</span></div>
+            <div class="label">Move</div>
+            <div class="keys"><span class="keycap">↓</span><span class="keycap">S</span></div>
+            <div class="label">Soft drop</div>
+            <div class="keys"><span class="keycap">↑</span><span class="keycap">W</span></div>
+            <div class="label">Rotate CW</div>
+            <div class="keys"><span class="keycap">Z</span><span class="keycap">Q</span></div>
+            <div class="label">Rotate CCW</div>
+            <div class="keys"><span class="keycap">␣</span></div>
+            <div class="label">Hard drop</div>
+          </div>
+        </section>
+        <section class="panel-section buttons">
+          <button id="btnPause" type="button" class="icon-btn icon-pause" aria-pressed="false" title="Pause/Resume"></button>
+          <button id="btnMute" type="button" class="icon-btn icon-sound" aria-pressed="false" title="Mute"></button>
+          <button id="btnRestart" type="button" class="icon-btn icon-restart" title="Restart"></button>
+        </section>
+      </aside>
+
+      <aside class="panel panel-scores">
+        <section class="panel-section">
+          <h2 class="panel-title">High Scores</h2>
+          <div id="highscoresList" class="scores" role="list" aria-label="Top 5 scores"></div>
+        </section>
+      </aside>
+
+      <div class="game-wrapper">
+        <div id="playfield" class="playfield" role="grid" aria-label="Playfield 12×24"></div>
+        <div id="overlay" class="overlay" aria-hidden="true">
+          <div id="overlayMessage" class="message"></div>
+        </div>
+      </div>
+    </div>
+  <script type="module" src="./js/main.js"></script>
+  </main>
+</body>
+</html>
